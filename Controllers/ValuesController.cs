@@ -8,6 +8,7 @@ using swashbuckle.Models;
 
 namespace swashbuckle.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -39,6 +40,8 @@ namespace swashbuckle.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <response code="201">Returns the newly created item</response> 
+        /// <response code="400">If the item is null</response>
         // POST api/values
         [HttpPost]
         [ProducesResponseType(201)]
