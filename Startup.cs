@@ -31,7 +31,24 @@ namespace swashbuckle
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Swashbuckle Example", Version = "v1" });
+                c.SwaggerDoc("v1", new Info 
+                    {  
+                      Version = "v1",
+                      Title = "Swashbuckle Example", 
+                      Description = "Example on how to have a Swagger API using Swashbuckle",
+                      TermsOfService = "None",
+                      Contact = new Contact
+                      {
+                          Name = "Roger Santos",
+                          Email = string.Empty,
+                          Url = "https://github.com/RogerioDosSantos"
+                      },
+                      License = new License
+                      {
+                          Name = "MIT",
+                          Url = "https://opensource.org/licenses/MIT"
+                      }
+                    });
             });
         }
 
