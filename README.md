@@ -7,17 +7,16 @@
 From this folder execute the following commands
 
 ```shell
+# Build Solution
+docker-compose.exe -f .\build\docker-compose-build-linux.yaml build
 
-# Get all dependencies and required packages
-dotnet restore
-
-# Build and Run the project
-dotnet run
+# Run Solution
+docker-compose.exe -f .\debug\docker-compose.yaml up
 ```
 
 From your preffered browser go to the following URL:
 
-- Swagger Specification: [http://localhost:5000/swagger/v1/swagger.json](http://localhost:5000/swagger/v1/swagger.json)
+- Swagger Specification: [http://localhost:8080/swagger/v1/swagger.json](http://localhost:8080/swagger/v1/swagger.json)
 
-- Swagger User Interface: [http://localhost:5000/swagger](http://localhost:5000/swagger)
+- Swagger User Interface: [http://localhost:8080/swagger](http://localhost:8080/swagger)
 
