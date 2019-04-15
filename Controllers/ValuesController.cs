@@ -24,6 +24,18 @@ namespace swashbuckle.Controllers
             return "value";
         }
 
+        /// <summary>
+        /// Creates a Values.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST api/values
+        ///     {
+        ///        "string": "desired_value"
+        ///     }
+        ///
+        /// </remarks>
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
@@ -36,6 +48,10 @@ namespace swashbuckle.Controllers
         {
         }
 
+        /// <summary>
+        /// Deletes a specific Values passed in the id. 
+        /// </summary>
+        /// <param name="id"></param> 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)

@@ -8,7 +8,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System;
 
@@ -35,6 +37,7 @@ namespace swashbuckle
                     {  
                       Version = "v1",
                       Title = "Swashbuckle Example", 
+                      // All Configuration below are optional
                       Description = "Example on how to have a Swagger API using Swashbuckle",
                       TermsOfService = "None",
                       Contact = new Contact
@@ -49,6 +52,11 @@ namespace swashbuckle
                           Url = "https://opensource.org/licenses/MIT"
                       }
                     });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
