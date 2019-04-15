@@ -4,12 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
+using swashbuckle.Models;
+
 namespace swashbuckle.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -38,8 +41,11 @@ namespace swashbuckle.Controllers
         /// </remarks>
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public ActionResult<ValuesModel> Post([FromBody] ValuesModel values_model)
         {
+          return new ValuesModel();
         }
 
         // PUT api/values/5
