@@ -13,6 +13,8 @@ services:
     build:
       context: ../
       dockerfile: ./build/build_linux.docker
+      args:
+        stage_image: "swashbuckle_stage:linux" 
     image: "rogersantos/swashbuckle:linux"
     # depends_on: 
     #   - stage

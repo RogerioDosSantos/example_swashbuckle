@@ -1,7 +1,7 @@
 # Build Linux
 
 ## Stage
-ARG stage_image="swashbuckle/stage:linux"
+ARG stage_image=""
 FROM "${stage_image}" as stage
 
 ## Build
